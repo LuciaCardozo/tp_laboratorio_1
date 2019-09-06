@@ -10,3 +10,14 @@
 
 1567714138 c:\users\haedo jonathan\desktop\lu\tp1\tp_laboratorio_1\funciones.h
 
+1567797294 source:c:\users\haedo jonathan\desktop\lu\tp_laboratorio_1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+
+1567714138 source:c:\users\haedo jonathan\desktop\lu\tp_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1567714138 c:\users\haedo jonathan\desktop\lu\tp_laboratorio_1\funciones.h
+

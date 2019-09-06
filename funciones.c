@@ -25,12 +25,10 @@ int dividirDosNumeros(float *resultadoDiv, float numeroA,float numeroB)
     *resultadoDiv = numeroA/numeroB;
     if(numeroB == 0)
     {
-        printf("\nEl resultado de DIVISION (%.2f/%.2f) es: Error no se puede dividir entre cero(0)",numeroA,numeroB);
         ret = -1;
     }
     else
     {
-        printf("\nEl resultado de la DIVISION (%.2f/%.2f) es: %.2f",numeroA,numeroB,*resultadoDiv);
         ret = 0;
     }
     return ret;
@@ -74,7 +72,7 @@ int validarFactorial(float numero,int resultado)
     int ret = -1;
     if(numero <0  || numero > 12)
     {
-        printf("\nERROR: El factorial de (%.2f) no se puede calcular.El minimo es 0 y el maximo 12.\n",numero);
+        printf("ERROR: El factorial de (%.2f) no se puede calcular.El minimo es 0 y el maximo 12.\n",numero);
     }
     else
     {
@@ -95,12 +93,12 @@ int menuPrincipal()
         opcion = mostrarOpciones();
         if((opcion != 1 && opcion == 2))
         {
-            printf("\nError, falta cargar numeros");
+            printf("Error, falta cargar numeros\n");
             continue;
         }
         else if((opcion != 1 && opcion == 3) || opcion == 4)
         {
-            printf("\nError");
+            printf("Error\n");
             continue;
         }
         switch(opcion)
@@ -109,7 +107,7 @@ int menuPrincipal()
             numeroUno = pedirNumero();
         case 2:
             numeroDos = pedirNumero();
-            printf("-----------------------");
+            printf("-----------------------\n\n");
         case 3:
             sumarDosNumeros(&resultadoSuma,numeroUno,numeroDos);
             restarDosNumeros(&resultadoResta,numeroUno,numeroDos);
@@ -118,16 +116,24 @@ int menuPrincipal()
             factorialUno = sacarFactorial(numeroUno);
             factorialDos = sacarFactorial(numeroDos);
         case 4:
-            printf("\nEl resultado de la SUMA (%.2f+%.2f)es: %.2f",numeroUno,numeroDos,resultadoSuma);
-            printf("\nEl resultado de la RESTA (%.2f-%.2f) es: %.2f",numeroUno,numeroDos,resultadoResta);
-            printf("\nEl resultado de la MULTIPLICACION (%.2f*%.2f) es: %.2f",numeroUno,numeroDos,resultadoMult);
+            printf("El resultado de la SUMA (%.2f+%.2f)es: %.2f\n",numeroUno,numeroDos,resultadoSuma);
+            printf("El resultado de la RESTA (%.2f-%.2f) es: %.2f\n",numeroUno,numeroDos,resultadoResta);
+            printf("El resultado de la MULTIPLICACION (%.2f*%.2f) es: %.2f\n",numeroUno,numeroDos,resultadoMult);
+            if(dividirDosNumeros(&resultadoDiv,numeroUno,numeroDos)!=0)
+            {
+                 printf("El resultado de DIVISION (%.2f/%.2f) es: Error no se puede dividir entre cero(0)\n",numeroUno,numeroDos);
+            }
+            else
+            {
+                printf("El resultado de la DIVISION (%.2f/%.2f) es: %.2f\n",numeroUno,numeroDos,resultadoDiv);
+            }
             validarFactorial(numeroUno,factorialUno);
             validarFactorial(numeroDos,factorialDos);
             break;
         case 5:
             break;
         default:
-            printf("No es una opcion");
+            printf("\nNo es una opcion");
             break;
         }
     }
