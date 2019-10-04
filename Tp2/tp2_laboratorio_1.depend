@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1569904829 source:c:\users\lucia\desktop\abm pantalla\tp2_laboratorio_1\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"utn.h"
+
+1569904660 c:\users\lucia\desktop\abm pantalla\tp2_laboratorio_1\arrayemployees.h
+
+1568906102 c:\users\lucia\desktop\abm pantalla\tp2_laboratorio_1\utn.h
+
+1570195606 source:c:\users\lucia\desktop\abm pantalla\tp2_laboratorio_1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayEmployees.h"
+	"utn.h"
+
+1569737634 source:c:\users\lucia\desktop\abm pantalla\tp2_laboratorio_1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
