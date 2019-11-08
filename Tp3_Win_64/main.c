@@ -43,10 +43,12 @@ int main()
                 }
                 break;
             case 2:
+                ll_clear(listaEmpleados);
                 cantidadDeEmpleadoLeidosBin=controller_loadFromBinary("data.bin",listaEmpleados);
                 if(cantidadDeEmpleadoLeidosBin!=-1)
                 {
                     printf("\nSe abrio: %d Archivos\n",cantidadDeEmpleadoLeidosBin);
+                    controller_lastIdEmployee(listaEmpleados);
                 }
                 else
                 {
