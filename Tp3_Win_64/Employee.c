@@ -4,46 +4,40 @@
 #include <string.h>
 #include "Employee.h"
 
-  /** \brief Reserva un espacio de memoria para un empleado mediante malloc.
-   *
-   * \param
-   * \return retorna un empleado si, malloc obtuvo el espacio o null si no obtuvo.
-   *
-   */
 Employee* employee_new()
 {
-	Employee* emp = (Employee*)malloc( sizeof(Employee));
+	Employee* pEmp = (Employee*)malloc( sizeof(Employee));
 
-	if(emp != NULL){
-	   strcpy(emp->nombre, "");
-	   emp->horasTrabajadas = 0;
-	   emp->sueldo = 0;
+	if(pEmp != NULL){
+	   strcpy(pEmp->nombre, "");
+	   pEmp->horasTrabajadas = 0;
+	   pEmp->sueldo = 0;
 	}
-	return emp;
+	return pEmp;
 }
 
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char *sueldo)
 {
-	Employee* emp=employee_new();
+	Employee* pEmp=employee_new();
 	int auxId;
 	int auxHoras;
 	int auxSueldo;
 	auxId=atoi(idStr);
 	auxHoras=atoi(horasTrabajadasStr);
 	auxSueldo=atoi(sueldo);
-	if(emp!=NULL && idStr!=NULL && nombreStr!=NULL && horasTrabajadasStr!=NULL && sueldo!=NULL)
+	if(pEmp!=NULL && idStr!=NULL && nombreStr!=NULL && horasTrabajadasStr!=NULL && sueldo!=NULL)
     {
-    	employee_setId(emp,auxId);
-    	employee_setNombre(emp,nombreStr);
-    	employee_setHorasTrabajadas(emp,auxHoras);
-    	employee_setSueldo(emp,auxSueldo);
+    	employee_setId(pEmp,auxId);
+    	employee_setNombre(pEmp,nombreStr);
+    	employee_setHorasTrabajadas(pEmp,auxHoras);
+    	employee_setSueldo(pEmp,auxSueldo);
 
     }
     else
     {
-        employee_delete(emp);
+        employee_delete(pEmp);
     }
-    return emp;
+    return pEmp;
 }
 
 int employee_delete(Employee* this)

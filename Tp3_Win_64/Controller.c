@@ -160,8 +160,8 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
-    Employee* emp;
-    emp = employee_new();
+    Employee* pEmp;
+    pEmp = employee_new();
     int ret = -1;
     char auxNombre[51];
     int auxHoras;
@@ -180,7 +180,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
             }
             else
             {
-                emp = (Employee*)ll_get(pArrayListEmployee,auxPos);
+                pEmp = (Employee*)ll_get(pArrayListEmployee,auxPos);
                 controller_mostrarEmployeePorId(pArrayListEmployee,auxPos);
                 if(utn_getValidInt("\n\tQue desea modificar?\n1.Nombre\n2.Horas trabajadas\n3.Sueldo\n4.Cancelar\nIngrese opcion: ",
                                    "\nError, no es una opcion",&opciones,0,4,2) == 0)
@@ -192,7 +192,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                         case 1:
                             if(utn_getValidName(auxNombre) == 0)
                             {
-                                employee_setNombre(emp,auxNombre);
+                                employee_setNombre(pEmp,auxNombre);
                             }
                             else
                             {
@@ -202,7 +202,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                         case 2:
                             if(utn_getValidInt("\nIngrese horas trabajadas: ","\nError",&auxHoras,0,99999,2)==0)
                             {
-                                employee_setHorasTrabajadas(emp,auxHoras);
+                                employee_setHorasTrabajadas(pEmp,auxHoras);
                             }
                             else
                             {
@@ -212,7 +212,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                         case 3:
                             if(utn_getValidInt("\nIngrese sueldo: ","\nError",&auxSueldo,0,99999,2)==0)
                             {
-                                employee_setSueldo(emp,auxSueldo);
+                                employee_setSueldo(pEmp,auxSueldo);
                             }
                             else
                             {
