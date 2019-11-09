@@ -35,7 +35,7 @@ int main()
                 if(cantidadDeEmpleadoLeidosTxt!=-1)
                 {
                     printf("\nSe abrio: %d Archivos\n",cantidadDeEmpleadoLeidosTxt);
-                    controller_lastIdEmployee(listaEmpleados);
+                    controller_ultimoIdEmployee(listaEmpleados);
                 }
                 else
                 {
@@ -48,7 +48,7 @@ int main()
                 if(cantidadDeEmpleadoLeidosBin!=-1)
                 {
                     printf("\nSe abrio: %d Archivos\n",cantidadDeEmpleadoLeidosBin);
-                    controller_lastIdEmployee(listaEmpleados);
+                    controller_ultimoIdEmployee(listaEmpleados);
                 }
                 else
                 {
@@ -56,7 +56,14 @@ int main()
                 }
                 break;
             case 3:
-                controller_addEmployee(listaEmpleados);
+                if(controller_addEmployee(listaEmpleados)!=-1)
+                {
+                    printf("\nAlta Exitosa\n");
+                }
+                else
+                {
+                    printf("\nError, no se pudo cargar los datos\n");
+                }
                 break;
             case 4:
                 controller_editEmployee(listaEmpleados);
@@ -76,6 +83,9 @@ int main()
                 printf("\nSe cargo: %d Archivos\n",controller_saveAsBinary("data.bin",listaEmpleados));
                 break;
             case 10:
+                break;
+            default:
+                printf("\nError, no es una opcion\n");
                 break;
         }
     }while(option != 10);

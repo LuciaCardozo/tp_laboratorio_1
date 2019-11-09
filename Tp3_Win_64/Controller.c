@@ -40,9 +40,9 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
 {
     int ret = -1;
+    FILE *pFile = NULL;
     if(path != NULL && pArrayListEmployee != NULL)
     {
-        FILE *pFile = NULL;
         pFile = fopen(path,"rb");
         if(pFile != NULL)
         {
@@ -53,7 +53,15 @@ int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
     return ret;
 }
 
-int controller_lastIdEmployee(LinkedList* pArrayListEmployee)
+/** \brief Busca el ultimo id del linkedList y lo guarda en la estructura
+ *
+ * \param pArrayListEmployee LinkedList*
+ * \param
+ * \return retorna 0 si esta todo ok o -1 si hay error
+ *
+ */
+
+int controller_ultimoIdEmployee(LinkedList* pArrayListEmployee)
 {
     Employee* pEmp;
     int auxId;
@@ -79,10 +87,10 @@ int controller_lastIdEmployee(LinkedList* pArrayListEmployee)
     return ret;
 }
 
-/** \brief Busca el id del empleado y lo guardo en la posicion.
+/** \brief Busca el id del empleado.
  *
  * \param id es el id a buscar
- * \param posicion es la posicion que retorna.
+ * \param posicion es la posicion si encuentra el id.
  * \param pArrayListEmployee LinkedList*.
  * \return retorna 0 si encontro la posicion o -1 si no lo encontro.
  *
@@ -114,7 +122,7 @@ int controller_buscarEmployeePorId(LinkedList* pArrayListEmployee,int id,int* po
 /** \brief Alta de empleados
  *
  * \param pArrayListEmployee LinkedList*
- * \return int
+ * \return retorna 0 si esta todo ok o -1 si hay error
  *
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
@@ -147,7 +155,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  *
  * \param path char*
  * \param pArrayListEmployee LinkedList*
- * \return int
+ * \return retorna 0 si esta todo ok o -1 si hay error
  *
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
@@ -229,7 +237,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 /** \brief Baja de empleado
  *
  * \param pArrayListEmployee LinkedList*
- * \return int
+ * \return retorna 0 si esta todo ok o -1 si hay error
  *
  */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
@@ -278,7 +286,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 /** \brief Listar empleados
  *
  * \param pArrayListEmployee LinkedList*
- * \return int
+ * \return retorna 0 si esta todo ok o -1 si hay error
  *
  */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
@@ -308,7 +316,7 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  *
  * \param index es el indice de la lista
  * \param pArrayListEmployee LinkedList*
- * \return int
+ * \return retorna 0 si esta todo ok o -1 si hay error
  *
  */
 int controller_mostrarEmployeePorIdEnFila(LinkedList* pArrayListEmployee, int index)
@@ -336,7 +344,7 @@ int controller_mostrarEmployeePorIdEnFila(LinkedList* pArrayListEmployee, int in
  *
  * \param index es el indice de la lista
  * \param pArrayListEmployee LinkedList*
- * \return int
+ * \return retorna 0 si esta todo ok o -1 si hay error
  *
  */
 int controller_mostrarEmployeePorId(LinkedList* pArrayListEmployee, int index)

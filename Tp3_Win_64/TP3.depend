@@ -179,3 +179,50 @@
 	"LinkedList.h"
 	"Employee.h"
 
+1573265984 source:c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+	"parser.h"
+	"Controller.h"
+
+1573263457 c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\linkedlist.h
+
+1573263457 c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\employee.h
+
+1573263457 c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\utn.h
+
+1573263457 c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\parser.h
+
+1573264801 c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\controller.h
+
+1573263457 source:c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\employee.c
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"Employee.h"
+
+1573266916 source:c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1573266196 source:c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1573263457 source:c:\users\haedo jonathan\desktop\tp_laboratorio_1\tp3_win_64\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+

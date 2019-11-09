@@ -50,7 +50,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
     Employee *pEmp;
-    int ret= 0;
+    int ret = 0;
     if(pFile!=NULL && pArrayListEmployee!=NULL)
     {
         do
@@ -65,11 +65,11 @@ int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
                         ret++;
                     }
                 }
-                else
-                {
-                    employee_delete(pEmp);
-                    printf("\nError, no se cargaron los datos");
-                }
+            }
+            else
+            {
+                employee_delete(pEmp);
+                printf("\nError, no se cargaron los datos");
             }
         }
         while(!feof(pFile));
